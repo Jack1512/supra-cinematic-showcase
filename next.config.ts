@@ -1,14 +1,19 @@
 import type { NextConfig } from "next";
 
+const repoName = "supra-cinematic-showcase";
+const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
+const basePath = isGitHubActions ? `/${repoName}` : "";
+
 const nextConfig: NextConfig = {
-  poweredByHeader: false,
-  reactStrictMode: true,
+  output: "export",
+  trailingSlash: true,
+
   images: {
-    formats: ["image/avif", "image/webp"],
+    unoptimized: true,
   },
-  experimental: {
-    optimizePackageImports: ["lucide-react"],
-  },
+
+  basePath,
+  assetPrefix: basePath,
 };
 
 export default nextConfig;
