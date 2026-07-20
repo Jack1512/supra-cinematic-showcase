@@ -1,0 +1,15 @@
+.next
+node_modules
+dist
+coverage
+.env
+.env*.local
+public/frames/*.jpg
+public/frames/*.jpeg
+public/frames/*.JPG
+work/extracted-frames
+work/raw-frames
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

@@ -1,0 +1,192 @@
+import type { SceneDefinition, SceneId } from "@/types/cinematic";
+
+export const TOTAL_FRAMES = 264;
+export const SOURCE_WIDTH = 1920;
+export const SOURCE_HEIGHT = 1080;
+export const FRAME_BASE_PATH = "/frames-hq";
+export const SCROLL_LENGTH_VH = 1300;
+
+export const FRAME_RANGES: Record<SceneId, { start: number; end: number }> = {
+  hero: { start: 1, end: 45 },
+  exterior: { start: 46, end: 85 },
+  aerodynamics: { start: 86, end: 120 },
+  performance: { start: 121, end: 160 },
+  cockpitTransition: { start: 161, end: 168 },
+  cockpit: { start: 169, end: 196 },
+  rearPresence: { start: 197, end: 224 },
+  finalLaunch: { start: 225, end: 264 },
+};
+
+export const SCENES: SceneDefinition[] = [
+  {
+    id: "hero",
+    label: "Overview",
+    navLabel: "Overview",
+    start: FRAME_RANGES.hero.start,
+    end: FRAME_RANGES.hero.end,
+    representativeFrame: 30,
+    eyebrow: "TOYOTA GAZOO RACING",
+    heading: "GR SUPRA",
+    body: "Born to perform. Built to thrill.",
+    modelLine: "MkV - Turbocharged Inline-Six",
+    primaryCta: "BEGIN THE EXPERIENCE",
+    secondaryCta: "EXPLORE PERFORMANCE",
+    position: {
+      wide: { x: 0.5, y: 0.5 },
+      desktop: { x: 0.5, y: 0.5 },
+      tablet: { x: 0.56, y: 0.5 },
+      mobile: { x: 0.6, y: 0.52, fit: "cover" },
+    },
+  },
+  {
+    id: "exterior",
+    label: "Design",
+    navLabel: "Design",
+    start: FRAME_RANGES.exterior.start,
+    end: FRAME_RANGES.exterior.end,
+    representativeFrame: 65,
+    eyebrow: "DESIGN",
+    heading: "SHAPED BY SPEED",
+    body: "A long bonnet, compact cabin and muscular rear stance create the unmistakable Supra silhouette. Every surface communicates motion, even while the car stands still.",
+    features: [
+      "DOUBLE-BUBBLE ROOF",
+      "SCULPTED BODYWORK",
+      "DRIVER-FOCUSED PROPORTIONS",
+      "WIDE REAR STANCE",
+    ],
+    position: {
+      wide: { x: 0.5, y: 0.5 },
+      desktop: { x: 0.5, y: 0.5 },
+      tablet: { x: 0.54, y: 0.5 },
+      mobile: { x: 0.58, y: 0.52, fit: "cover" },
+    },
+  },
+  {
+    id: "aerodynamics",
+    label: "Aerodynamics",
+    navLabel: "Aerodynamics",
+    start: FRAME_RANGES.aerodynamics.start,
+    end: FRAME_RANGES.aerodynamics.end,
+    representativeFrame: 102,
+    eyebrow: "AERODYNAMICS",
+    heading: "CONTROL THE AIR",
+    body: "Every surface guides airflow, supports stability and strengthens the connection between car and road.",
+    features: [
+      "SCULPTED AIRFLOW CHANNELS",
+      "LOW PERFORMANCE STANCE",
+      "INTEGRATED AERODYNAMIC SURFACES",
+      "TRACK-INSPIRED STABILITY",
+    ],
+    position: {
+      wide: { x: 0.5, y: 0.48 },
+      desktop: { x: 0.5, y: 0.5 },
+      tablet: { x: 0.5, y: 0.5 },
+      mobile: { x: 0.55, y: 0.5, fit: "cover" },
+    },
+  },
+  {
+    id: "performance",
+    label: "Performance",
+    navLabel: "Performance",
+    start: FRAME_RANGES.performance.start,
+    end: FRAME_RANGES.performance.end,
+    representativeFrame: 140,
+    eyebrow: "PERFORMANCE",
+    heading: "POWER THAT RESPONDS",
+    metrics: [
+      { value: "3.0L", label: "Turbocharged inline-six" },
+      { value: "3.9 SEC", label: "0-60 mph" },
+      { value: "RWD", label: "Rear-wheel drive" },
+      { value: "6-SPEED", label: "Manual option" },
+    ],
+    secondaryMetricLine: "8-speed automatic option available",
+    position: {
+      wide: { x: 0.52, y: 0.48 },
+      desktop: { x: 0.53, y: 0.5 },
+      tablet: { x: 0.5, y: 0.5 },
+      mobile: { x: 0.56, y: 0.5, fit: "cover" },
+    },
+  },
+  {
+    id: "cockpitTransition",
+    label: "Cockpit transition",
+    navLabel: "Cockpit",
+    start: FRAME_RANGES.cockpitTransition.start,
+    end: FRAME_RANGES.cockpitTransition.end,
+    representativeFrame: 164,
+    eyebrow: "DRIVER INTERFACE",
+    heading: "ENGINEERED AROUND YOU",
+    secondaryLines: ["EVERY CONTROL.", "EVERY RESPONSE.", "WITHIN REACH."],
+    position: {
+      wide: { x: 0.5, y: 0.5 },
+      desktop: { x: 0.5, y: 0.5 },
+      tablet: { x: 0.5, y: 0.5 },
+      mobile: { x: 0.5, y: 0.5, fit: "cover" },
+    },
+  },
+  {
+    id: "cockpit",
+    label: "Cockpit",
+    navLabel: "Cockpit",
+    start: FRAME_RANGES.cockpit.start,
+    end: FRAME_RANGES.cockpit.end,
+    representativeFrame: 176,
+    eyebrow: "COCKPIT",
+    heading: "FOCUSED BY DESIGN",
+    body: "Low-slung seating, clear instrumentation and precise controls keep the driver at the centre of every input.",
+    features: [
+      "DRIVER-CENTRED CONSOLE",
+      "LOW SEATING POSITION",
+      "TACTILE CONTROL SURFACES",
+      "CLEAR PERFORMANCE READOUTS",
+    ],
+    position: {
+      wide: { x: 0.5, y: 0.5 },
+      desktop: { x: 0.5, y: 0.5 },
+      tablet: { x: 0.48, y: 0.5 },
+      mobile: { x: 0.48, y: 0.5, fit: "cover" },
+    },
+  },
+  {
+    id: "rearPresence",
+    label: "Rear presence",
+    navLabel: "Rear",
+    start: FRAME_RANGES.rearPresence.start,
+    end: FRAME_RANGES.rearPresence.end,
+    representativeFrame: 214,
+    eyebrow: "REAR PRESENCE",
+    heading: "A FINAL SIGNATURE",
+    body: "A planted track, compact overhangs and a purposeful rear graphic leave a shape that is unmistakable in motion.",
+    features: ["WIDE TRACK", "COMPACT OVERHANGS", "LOW VISUAL MASS", "REAR LIGHT SIGNATURE"],
+    position: {
+      wide: { x: 0.5, y: 0.5 },
+      desktop: { x: 0.5, y: 0.5 },
+      tablet: { x: 0.5, y: 0.5 },
+      mobile: { x: 0.52, y: 0.5, fit: "cover" },
+    },
+  },
+  {
+    id: "finalLaunch",
+    label: "Final launch",
+    navLabel: "Launch",
+    start: FRAME_RANGES.finalLaunch.start,
+    end: FRAME_RANGES.finalLaunch.end,
+    representativeFrame: 258,
+    eyebrow: "FINAL LAUNCH",
+    heading: "DISTILLED INTO MOTION",
+    body: "A concept study in precision, response and the pure emotion of driving.",
+    primaryCta: "REQUEST A TEST DRIVE",
+    secondaryCta: "REPLAY EXPERIENCE",
+    position: {
+      wide: { x: 0.5, y: 0.5 },
+      desktop: { x: 0.5, y: 0.5 },
+      tablet: { x: 0.5, y: 0.5 },
+      mobile: { x: 0.52, y: 0.5, fit: "cover" },
+    },
+  },
+];
+
+export const SCENE_BY_ID = Object.fromEntries(SCENES.map((scene) => [scene.id, scene])) as Record<
+  SceneId,
+  SceneDefinition
+>;
